@@ -21,15 +21,27 @@
     name="user"
     formControlName="user"
   />
-  <br /><br />
+  <br />
 
+  <span style="color: red" *ngIf="user && user.invalid && user.touched">
+    Should have valid email id</span
+  >
+
+  <br />
   <input
     type="password"
     placeholder="Enter password"
     name="passowrd"
     formControlName="password"
   />
+  <br />
 
+  <span
+    style="color: red"
+    *ngIf="password && password.invalid && password.touched"
+  >
+    Should have valid password</span
+  >
   <br /><br />
-  <button>Login</button>
+  <button [disabled]="loginForm.invalid">Login</button>
 </form>
